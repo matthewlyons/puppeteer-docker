@@ -10,5 +10,10 @@ WORKDIR /usr/app
 COPY package*.json ./
 RUN npm i
 COPY . .
-CMD [ "node", "index.js" ]
+
+ENV NODE_ENV production
+ENV PORT 80
+EXPOSE 80
+
+CMD ["npm", "start"]
 
